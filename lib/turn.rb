@@ -16,6 +16,9 @@ def position_taken?(board,position)
   end 
 end
 
+def move(board,position,char="X")
+  board[position.to_i-1]= char
+end
 
 def valid_move?(board,position)
   if (position.to_i-1).between?(0,8) && position_taken?(board,position.to_i-1) == false
@@ -30,10 +33,11 @@ end
 
 def turn(board)
   puts "Please enter 1-9:"
-  position= gets.chomp.to_i
+  position= gets.chomp
   if valid_move?(board, position) == true
-    position_taken?(board,position) 
+    move(board,position,char="X")
   else
-    turn
+    turn(board)
   end
+puts display_board(board)
 end
