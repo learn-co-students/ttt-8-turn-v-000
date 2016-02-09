@@ -8,8 +8,8 @@ def display_board(board)
 end
 
 
-def valid_move?(board,position)
-  if !position_taken?(board,position.to_i-1) && (position.to_i-1).between?(0,8)
+def valid_move?(board, position)
+  if !position_taken?(board, position.to_i-1) && (position.to_i-1).between?(0,8)
     true
   else
     puts "Go again"
@@ -17,7 +17,7 @@ def valid_move?(board,position)
 end
 
 
-def position_taken?(board,position)
+def position_taken?(board, position)
   if board[position] == " " || board[position] == "" || board[position] == nil
     false
   else 
@@ -26,7 +26,7 @@ def position_taken?(board,position)
 end 
 
 
-def move(board,position,player = "X")
+def move(board, position, player = "X")
       board[position.to_i-1] = player
 end
 
@@ -34,8 +34,8 @@ end
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
-  if valid_move?(board,input)
-    move(board,input)
+  if valid_move?(board, input)
+    move(board, input)
   else
     turn(board)
   end
