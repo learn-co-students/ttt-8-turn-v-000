@@ -1,10 +1,8 @@
 def turn(board)
-  
   puts "Please enter 1-9:"
   position = gets.strip
   until valid_move?(board, position) == true
-
-puts "Hey that's not a valid move!"
+    puts "Hey that's not a valid move!"
     position = gets.strip
   end
   move(board, position, player = "X")
@@ -16,8 +14,7 @@ def move(board, position, player = "X")
 end
 
 def display_board(board)
- board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-  puts " #{board[0]} | #{board[1]} | #{board[2]} "
+   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
   puts " #{board[3]} | #{board[4]} | #{board[5]} "
   puts "-----------"
