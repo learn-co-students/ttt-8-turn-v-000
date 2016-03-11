@@ -29,6 +29,8 @@ def move(board, position, char="X")
   else 
     turn(board)
   end
+end
+
  
 
   
@@ -99,6 +101,3 @@ def move(board, position, char="X")
 
 
 
-
-  valid_move?(board, input) 
-end
