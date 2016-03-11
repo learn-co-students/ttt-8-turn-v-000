@@ -42,5 +42,7 @@ def turn(board)
     until valid_move?(board, input) == true
     input = gets.strip
     end
+    move(board, input, valor = "X")
+    display_board(board)
   end
 end
