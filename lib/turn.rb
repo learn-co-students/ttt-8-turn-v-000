@@ -25,18 +25,22 @@ position = position.to_i-1
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
-  if vaild_move?(board,input)
+  if valid_move?(board,input)
     move(board,input)
- # print display_board(board)
+    display_board(board)
     else
       turn(board)
 end
 end
 
 def position_taken?(board, position)
-  taken = nil
-if board[position] == " " || board[position] == "" || board[position] == nil#end
+taken = nil 
+if board[position] == " " || board[position] == "" || board[position] == nil
+  taken = false
+else
+  taken = true
 end
+taken
 end
 
 def move(board,location,token = "X")
