@@ -19,7 +19,7 @@ position = position.to_i-1
      end
    else
       false
-    end
+    end 
   end
 
 def turn(board)
