@@ -1,6 +1,6 @@
 # display_board
 def display_board(board)
-  
+
 puts " #{board[0]} | #{board[1]} | #{board[2]} "
 puts "-----------"
 puts " #{board[3]} | #{board[4]} | #{board[5]} "
@@ -10,12 +10,15 @@ end
 
 #valid_move
 def valid_move?(board,taken)
-  !(board[taken] == "X" || board[taken] == "O")
   !(position_taken?(board,taken)) && taken.between?(0,8)
 end
 
-def position_taken?(board,taken)
-  !(board[taken] = " " || board[taken] ="" || board[taken] =nil)
+def position_taken?(board, taken)
+  if board[taken] == nil || board[taken] == " " || board[taken] == ''
+    false
+  else
+    true
+  end
 end
 
 #move
@@ -33,15 +36,7 @@ def update_array_at_with(array, index, value)
   array[index] = value
 end
 
-
-
-#!/usr/bin/env ruby
-require_relative '../lib/turn'
-
 def turn(board)
   puts "Please enter 1-9:"
+  user_input = gets
 end
-
-puts "Welcome to Tic Tac Toe!"
-display_board(board)
-turn(board)
