@@ -47,10 +47,8 @@ def turn(board)
 
     else
       puts "Invalid move"
-      puts "Please enter 1-9:"
-    #  user_input = gets #THIS CAUSES INDEFINTE LOOP ISSUE
-      taken = input_to_index(user_input)
-    valid_move?(board,taken) == true
-          turn(board)
-  end
-end
+      turn(board)
+      user_input = gets
+      end
+    end
+    
