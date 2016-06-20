@@ -13,7 +13,7 @@ def valid_move?(board,taken)
   !(position_taken?(board,taken)) && taken.between?(0,8)
 end
 
-def position_taken?(board, taken)
+def position_taken?(board,taken)
   if board[taken] == nil || board[taken] == " " || board[taken] == ''
     false
   else
@@ -38,13 +38,19 @@ end
 
 def turn(board)
   puts "Please enter 1-9:"
-  user_input = gets
+  user_input = gets.strip
   taken = input_to_index(user_input)
   if valid_move?(board,taken) == true
-    puts "Invalid move"
-    puts "Please enter 1-9:"
-    turn(board)
-  else
-    valid_move?(board,taken)
+      move(array, index, value="X")
+      array[index] = value
+
+
+    else
+      puts "Invalid move"
+      puts "Please enter 1-9:"
+    #  user_input = gets #THIS CAUSES INDEFINTE LOOP ISSUE
+      taken = input_to_index(user_input)
+    valid_move?(board,taken) == true
+          turn(board)
   end
 end
