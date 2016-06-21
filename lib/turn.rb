@@ -1,4 +1,5 @@
 # display_board
+
 def display_board(board)
 
 puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -31,24 +32,15 @@ def move(array, index, value="X")
   array[index] = value
 end
 
-board = ["", "", "" , "", "", "", "", "", ""]
-def update_array_at_with(array, index, value)
-  array[index] = value
-end
-
 def turn(board)
   puts "Please enter 1-9:"
   user_input = gets.strip
-  taken = input_to_index(user_input)
-  if valid_move?(board,taken) == true
-      move(array, index, value="X")
-      array[index] = value
-
-
-    else
+  index = input_to_index(user_input)
+  if valid_move?(board,index) == true
+      move(board,index)
+      display_board(board)
+  else
       puts "Invalid move"
       turn(board)
-      user_input = gets
       end
     end
-    
