@@ -28,14 +28,18 @@ end
 
 def move(array, index, value="X")
   array[index] = value
-end 
+end
 
 def turn(board)
   puts "Please enter 1-9:"
   user_input = gets
-  if input_to_index(user_input)
-    move(array, index, value="X")
+  index = input_to_index(user_input)
+  if valid_move?(board, index)
+    move(board, index)
+    display_board(board)
   else
     puts "Please enter 1-9:"
+    user_input = gets
+    index = input_to_index(user_input)
   end
 end
