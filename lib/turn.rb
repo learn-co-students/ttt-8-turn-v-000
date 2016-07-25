@@ -14,6 +14,7 @@ def valid_move?(board, position)
   end
 end
 
+
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
@@ -25,10 +26,13 @@ def turn(board)
   display_board(board)
 end
 
-def position_taken?(board, location)
-  board[location] != " "
+
+# re-define your #position_taken? method here, so that you can use it in the #valid_move? method above.
+
+def position_taken?(board, index)
+  board[index] != " "
 end
 
-def move(board, location, current_player = "X")
-  board[location.to_i-1] = current_player
+def move(board, index, value="X")
+  board[index.to_i-1]=value
 end
