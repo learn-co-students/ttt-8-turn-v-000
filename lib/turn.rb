@@ -32,14 +32,20 @@ def position_taken? (board, index) # remember to check position_taken_spec.rb fo
     true
   end
 end
-def turn (board)
+def turn(board)
   puts "Please enter 1-9:"
   input= gets.chomp
   input= input_to_index(input)
-  #input=input_to_index(input)
-  #while !input.between?(0,8)  puts "Please enter 1-9:"   end
-  while input.between?(0,8)
-    move(board, input)
-    display(board)
+  if valid_move?(board,input)
+    move(board,input)
+    display_board (board)
+  #move(board, input)  display(board)
+  #input>=0 || input<=8 move(board,input)
+  else
+    turn(board)
   end
 end
+  #input=input_to_index(input)
+  #while !input.between?(0,8)  puts "Please enter 1-9:"   end
+  #while input.between?(0,8)  move(board, input) display(board) end
+  #while !input.between?(0,8) puts "Please enter 1-9:"  end
