@@ -1,3 +1,5 @@
+require 'pry'
+
 board = ["   ","   ","   ","   ","   ","   ","   ","   ","   "]
 def display_board (board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -16,14 +18,19 @@ def move (board, index, current_player = "X" ) # localized variables used = "boa
   board [index] = current_player #updated board entries in one line w/ 3 arguments = placeholder for values in the bin/move file
 end
 def valid_move?(board, index)
+  #index is between 0 and 8
+  # position at the index is not taken
+  index.between?(0,8) && !position_taken?(board, index)
+
+
 # re-define your #position_taken? method here, so that you can use it in the #valid_move? method above.
 # remember to check position_taken_spec.rb for syntax of the conditions
-  if board[index] == " " || "" || nil
-    #checks to see user entered "index" value w/ array type data retrieval is comparable to "", " ", or nil
-    true#print true if user entered value is one of 3 conditions r met, i.e user entered "", or " ", or nil
-  elsif board[index] == "X" || "O"
-    false#print false if board has a position
-  else
+end
+def position_taken? (board, index) # remember to check position_taken_spec.rb for syntax of the conditions
+  #board = ["", "","X", "", "", "", "", "", "" ]
+  if board[index] == "" || board[index] == " "|| board[index] == nil
     false
+  else #board[index] == "X" || "O"
+    true
   end
 end
