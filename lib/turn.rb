@@ -21,8 +21,6 @@ def valid_move?(board, index)
   #index is between 0 and 8
   # position at the index is not taken
   index.between?(0,8) && !position_taken?(board, index)
-
-
 # re-define your #position_taken? method here, so that you can use it in the #valid_move? method above.
 # remember to check position_taken_spec.rb for syntax of the conditions
 end
@@ -32,5 +30,17 @@ def position_taken? (board, index) # remember to check position_taken_spec.rb fo
     false
   else #board[index] == "X" || "O"
     true
+  end
+end
+def turn (board)
+  puts "Please enter 1-9:"
+  input= gets.chomp
+  input_to_index(input)
+  input=input_to_index(input)
+  if valid_move?(board, input)
+    move(board, input)
+    display(board, input)
+  else
+  puts "Please enter 1-9:"
   end
 end
