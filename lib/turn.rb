@@ -39,10 +39,10 @@ def turn(board)
   if valid_move?(board,input)
     move(board,input)
     display_board (board)
-  #move(board, input)  display(board)
-  #input>=0 || input<=8 move(board,input)
-  else
-    turn(board)
+  #move(board, input)  display(board)#here was the mistake, for the method called is not correctly ID
+  #input>=0 || input<=8 move(board,input) this was already validated in valid_move method
+  elsif
+    turn(board) #here is the missing line for 9-12 pm (3 hrs) last nt and 9-11 am (2 hrs today), method calls itself is a new concept
   end
 end
   #input=input_to_index(input)
