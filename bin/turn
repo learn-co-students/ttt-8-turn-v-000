@@ -1,1 +1,12 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+
+#setup data required to play game-- the array to keep track of board
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+#welcome user and show them board of game
+puts "Welcome to Tic Tac Toe!"
+display_board(board)
+
+#starts a turn in game
+turn(board)
