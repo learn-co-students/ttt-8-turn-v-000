@@ -55,12 +55,15 @@ describe './lib/turn.rb' do
 
       index = 0
       expect(valid_move?(board, index)).to be_truthy
-
+      puts valid_move?(board, index)
       index = 4
       expect(valid_move?(board, index)).to be_falsey
+      puts valid_move?(board, index)
 
       index = -1
       expect(valid_move?(board, index)).to be_falsey
+      puts valid_move?(board, index)
+
     end
   end
 
