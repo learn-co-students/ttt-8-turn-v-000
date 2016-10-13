@@ -20,18 +20,17 @@ end
 
 def valid_move?(board, index)
 
-if position_taken?(board, index) == false
-  if index.between?(0, 10) == true
-  true
-end
-elsif index.between?(0, 10) == false
-  false
-end
-
+if index.between?(0,8)
+  if position_taken?(board, index) == false
+    true
+  end
 
 end
 
-def move(board, index, token)
+
+end
+
+def move(board, index, token = "X")
   board[index] = token
 end
 
@@ -40,7 +39,7 @@ def turn(board)
   input = gets.strip
   index =input_to_index(input)
   if valid_move?(board, index) == true
-    board[index] = "X"
+    move(board, index)
     display_board(board)
   else puts "Invalid:"
     turn(board)
