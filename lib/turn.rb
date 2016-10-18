@@ -7,8 +7,6 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-#Should accept a board and an index from the user and return true if the index is within the correct
-#range of 0-8 and is currently unoccupied by an X or O token. inc. position_taken?
 def position_taken?(board, index)
   if board[index]  == " " || board[index]  == "" || board[index]  == nil
     false
@@ -38,10 +36,9 @@ def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
-  #if index is valid
     if valid_move?(board, index) == true
-      #make the move for input
       move(board, index)
+      # this makes the board show twice?
       display_board(board)
     else
       turn(board)
