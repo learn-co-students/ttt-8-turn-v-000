@@ -38,8 +38,8 @@ def turn(board)
   index = input_to_index(input)
     if valid_move?(board, index) == true
       move(board, index)
-      # this makes the board show twice?
-      display_board(board)
+      #this makes the board show twice but passes the test
+      #display_board(board)
     else
       turn(board)
     end
