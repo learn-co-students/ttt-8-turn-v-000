@@ -41,6 +41,8 @@ def turn(board)
   while !valid_move?(board, index)
     puts "Please enter another move:"
     input = gets.to_i
+    index = input_to_index(input)
   end
   move(board,index)
+  display_board(board)
 end
