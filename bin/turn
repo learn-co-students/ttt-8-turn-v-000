@@ -1,1 +1,64 @@
-#!/usr/bin/env ruby
+
+def display_board(board)
+  puts " #{board[0]} | #{board[1]} | #{board[2]} "
+  puts "-----------"
+  puts " #{board[3]} | #{board[4]} | #{board[5]} "
+  puts "-----------"
+  puts " #{board[6]} | #{board[7]} | #{board[8]} "
+end
+puts "Welcome to Tic Tac Toe!"
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+puts "Where would you like to go?"
+input = gets.strip
+
+index = input_to_index(input)
+
+move(board, index)
+
+display_board(board)
+
+def input_to_index(user_input)
+  user_input = user_input.to_i
+  user_input = user_input - 1
+end
+
+def move(board, user_input, character = "X")
+  board[user_input] = character
+  return board
+end
+
+# code your #position_taken? method here!
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+def position_taken?(board, index)
+  if board[index] == (" " || "")
+    false
+  elsif board[index] == "X"
+    true
+  elsif board[index] == "O"
+    true
+  elsif board[index] != ("X" || "O")
+    false
+  else
+  end
+end
+
+def valid_move?(board, index)
+  if index.between?(0,8) && position_taken?(board, index) == false
+    true
+  else
+  end
+end
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+def position_taken?(board, index)
+  if board[index] == (" " || "")
+    false
+  elsif board[index] == "X"
+    true
+  elsif board[index] == "O"
+    true
+  elsif board[index] != ("X" || "O")
+    false
+  else
+  end
+end
