@@ -27,12 +27,14 @@ def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
-    loop do
-      if index < 0 && index > 8
-        puts "Please enter 1-9:"
-      elsif index.between?(0, 8)
-        break
-      end 
-    end
+  if index.between?(0,8)
   valid_move?(board, index)
+  else
+    loop do
+      turn(board)
+      break
+    end
+  end
+  move(board, index)
+  display_board(board)
 end
