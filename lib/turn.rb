@@ -1,3 +1,5 @@
+require 'pry'
+
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
@@ -36,14 +38,13 @@ end
 
 def turn(board)
   puts "Please enter 1-9:"
-  board = gets.strip
-  input_to_index(board)
-    if valid_move?(board, 0)
+  input = gets.strip
+  index = input_to_index(input)
+    if valid_move?(board, index)
       true
-      move(board)
+      move(board, index)
       display_board(board)
     else
-      puts "invalid"
       turn(board)
   end
 end
