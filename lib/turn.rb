@@ -8,6 +8,7 @@ end
 
 def input_to_index(user_input)
  index =  user_input.to_i - 1
+ return index
 end
 
 def move(board, user_input, player = "X")
@@ -37,9 +38,8 @@ def turn(board)
   until play_made == true
     puts "Please enter 1-9:"
     input = gets.strip 
-#    input.to_i
     input_to_index(input.to_i)
-    index = input.to_i - 1
+    index = input.to_i - 1 
     if valid_move?(board, index) == true &&  position_taken?(board, index) == false
       move(board, index)
       display_board(board)
