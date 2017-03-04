@@ -21,8 +21,7 @@ A turn of Tic Tac Toe is composed of the following routine:
 
 All these procedures will be wrapped into our `#turn` method. However, the majority of the logic for these procedures will be defined and encapsulated in individual methods (some of which you may have built previously).
 
-You can imagine the pseudocode for the `#turn` method:
-
+You can imagine the pseudocode for the `#turn` method
 ```
 ask for input
 get input
@@ -405,4 +404,3 @@ Another issue, besides only marking Xs as described above, is that the game play
 Even with these deficiencies, this `#turn` method means you are very close to building a complete Tic Tac Toe game. Get excited!
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ttt-8-turn' title='Building a Tic Tac Toe Turn'>Building a Tic Tac Toe Turn</a> on Learn.co and start learning to code for free.</p>
-
