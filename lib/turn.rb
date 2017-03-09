@@ -23,7 +23,7 @@ def position_taken?(board,index)
   end
 end
 
-def move(board,index,player = "X") #character could be current_player
+def move(board,index,player = "X") 
   board[index] = player
 end
 
