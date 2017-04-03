@@ -1,1 +1,12 @@
 #!/usr/bin/env ruby
+
+# setup the corresponding file to read the underlying methods and code
+require_relative '../lib/turn'
+
+board = [" ", " ", " ", " ", " ", " ", " ", " "]
+
+#welcome to board
+puts "Welcome To Tic Tac Toe!"
+# show board
+display_board(board)
+turn(board)
