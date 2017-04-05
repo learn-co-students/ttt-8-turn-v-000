@@ -1,1 +1,10 @@
 #!/usr/bin/env ruby
+puts "Welcome to Tic Tac Toe!"
+board = [" "," "," "," "," "," "," "," "," "]
+display_board(board)
+puts "Where would you like to go?"
+
+input = input_to_index(gets.strip)
+#input = input_to_index(input)
+move(board, input)
+display_board(board)
