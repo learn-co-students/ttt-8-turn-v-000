@@ -35,23 +35,9 @@ def turn(board)
   user_input = gets.strip # Gets user input
   index = input_to_index(user_input) # Passes user input to input_to_index method as argument
     if valid_move?(board, index) == true # Test Code not valid then turn(board) to run again
-       move(board, index, value = "X") #Test Code
+       move(board, index, value = "X")
        display_board(board)
-    else #Test Code
-      turn(board) #Test Code
-    end #Test Code
+    else
+      turn(board)
+    end
   end
-# validates the input correctly (FAILED - 2)
-# asks for input again after a failed validation (FAILED - 3)
-# makes valid moves (FAILED - 4)
-# displays a correct board after a valid turn (FAILED - 5)
-
-##get input
-##convert input to index
-##if index is valid (if valid_move != true)
-##make the move for input
-##else
-## ask for input again until you get a valid input
-##end
-
-#  end

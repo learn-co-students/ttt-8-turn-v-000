@@ -12,8 +12,3 @@ move(board, 1, "X")
 
 display_board(board)
 turn(board)
-#valid_move?(board, index) #Test Code
-#user_input = gets.strip # Sets variable equal to user input
-#index = input_to_index(user_input) # Passes user input to input_to_index method as argument
-display_board(board)
-#turn(board)
