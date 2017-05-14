@@ -48,8 +48,10 @@
 
    input = gets
 
-   if valid_move?(board, input_to_index(input) ) == true
-     move(board, input_to_index(input))
+   input =  input_to_index(input)
+
+   if valid_move?(board, input) == true
+     move(board, input)
      display_board(board)
      
    else turn(board)
