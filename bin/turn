@@ -7,10 +7,6 @@ puts "Welcome to Tic Tac Toe!"
 
 display_board(board)
 
-turn(input)
+turn(board)
 
-input_to_index(input)
-
-valid_move?(board, index)
-
-display_board(board)
+#Asking for input again is the hard part. We either need a mechanism to repeat the entire logic again until input satisfies the valid requirement, like a loop of some sort, or we need to be able to execute a procedure that asks for a user's input again. It's almost like what we might want to do in the event of invalid user input is just replay the entire turn. No move was made, so why not just run #turn again?
