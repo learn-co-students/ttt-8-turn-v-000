@@ -14,19 +14,17 @@ def input_to_index(input)
 end
 
 def position_taken?(board, input)
-  index = input.to_i - 1
-  if board[index] == "  " || board[index] == " " || board[index] == ""
+  if board[input] == "  " || board[input] == " " || board[input] == ""
      false
-  elsif board[index] == nil
+  elsif board[input] == nil
      false
-  elsif board[index] == "X" || board[index] == "O"
+  elsif board[input] == "X" || board[input] == "O"
      true
   end
 end
 
 def valid_move?(board, input)
-  index = input.to_i - 1
-    if index.between?(0,8) && position_taken?(board, input) == false
+    if input.between?(0,8) && position_taken?(board, input) == false
       true
     else
       false
@@ -34,14 +32,18 @@ def valid_move?(board, input)
 end
 
 def move(board, input, character = "X")
-  index = input.to_i - 1
-  board[index] = character
+  board[input] = character
 end
 
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
-  valid_move?(board, input)
+  if valid_move?(board, index)
+    move(board, index, character = "X")
+    display_board(board)
+  else
+    turn(board)
+  end
 
 end
