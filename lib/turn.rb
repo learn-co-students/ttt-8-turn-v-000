@@ -1,16 +1,14 @@
-def turn
+def turn(board, index)
 
-  puts "Please enter 1-9:"
-  user_input = gets.strip
+    puts "Please enter 1-9:"
 
-  while valid_move?(board,index) == true
+    user_input = gets.strip
 
     input_to_index(user_input)
 
-    move(array, index, value = "X")
+    valid_move?(board,index)
 
-    display_board(board)
-  end
+
 end
 
 def display_board(board)
@@ -23,10 +21,17 @@ end
 
 def valid_move?(board, index)
   if index.between?(0,8) == true && position_taken?(board, index) == false
+
   return true
-else
+
+  move(array, index, value = "X")
+
+  display_board(board)
+
+    else
+
   return false
-    end
+  end
 end
 
 def position_taken?(board, index)
