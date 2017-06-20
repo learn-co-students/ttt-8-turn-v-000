@@ -4,22 +4,27 @@ index = 0
 
 def turn(board)
 
+    index = 0
+
     puts "Please enter 1-9:"
     user_input = gets.strip
 
     input_to_index(user_input)
 
-    if valid_move(board,index) == true
+    if valid_move?(board,index) == true
 
-      move(array, index, value = "X")
+      move(board, index, value = "X")
 
       display_board(board)
 
-    else
+      turn(board)
 
-      puts "Please enter a valid move:"
+    elsif valid_move?(board,index) == false
+
+      turn(board)
+
     end
-end
+  end
 
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -37,12 +42,8 @@ else
     end
 end
 
-def position_taken?(board, index)
-  if board[index] == " " || board[index] == "" || board[index] == nil
-    return false
-  elsif board[index] == "X" || board[index] == "O"
-    return true
-  end
+def position_taken?(board, location)
+  !(board[location].nil? || board[location] == " ")
 end
 
 def input_to_index(user_input)
@@ -50,7 +51,7 @@ def input_to_index(user_input)
   return index
 end
 
-def move(array, index, value = "X")
-array[index] = value
-return array
+def move(board, index, value = "X")
+board[index]= value
+return board
 end
