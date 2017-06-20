@@ -1,29 +1,30 @@
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-index = 0
+
 
 
 def turn(board)
 
-    index = 0
+  board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+  index = 0
 
     puts "Please enter 1-9:"
     user_input = gets.strip
 
     input_to_index(user_input)
 
-    if valid_move?(board,index) == true
+    while valid_move?(board,index) == false
 
-      move(board, index, value = "X")
+      puts "invalid."
 
-      display_board(board)
+      user_input = gets.strip
 
-      turn(board)
-
-    elsif valid_move?(board,index) == false
-
-      turn(board)
+      input_to_index(user_input)
 
     end
+
+    move(board, index, value = "X")
+
+    display_board(board)
+
   end
 
 def display_board(board)
@@ -36,14 +37,14 @@ end
 
 def valid_move?(board, index)
   if index.between?(0,8) == true && position_taken?(board, index) == false
-  return true
-else
-  return false
-    end
+    return true
+  else
+    return false
+  end
 end
 
-def position_taken?(board, location)
-  !(board[location].nil? || board[location] == " ")
+def position_taken?(board, index)
+  !(board[index].nil? || board[index] == " ")
 end
 
 def input_to_index(user_input)
@@ -52,6 +53,6 @@ def input_to_index(user_input)
 end
 
 def move(board, index, value = "X")
-board[index]= value
+board[index] = value
 return board
 end
