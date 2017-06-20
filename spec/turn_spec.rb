@@ -49,6 +49,21 @@ describe './lib/turn.rb' do
 
   end
 
+  # what the user types in
+  # " 1 | 2 | 3 "
+  # "-----------"
+  # " 4 | 5 | 6 "
+  # "-----------"
+  # " 7 | 8 | 9 "
+  # position or user_input or move
+  # the user would say if they wanted to move to the middle, 5
+
+  # the index of the move in the board
+  # it always 1- the position or move.
+  # we call that the index
+  # so if a user wants to move to the middle, 5, the index is 4
+
+
   describe '#valid_move?' do
     it 'returns true/false based on index' do
       board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
