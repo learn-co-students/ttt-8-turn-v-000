@@ -1,10 +1,10 @@
 
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
 
 def turn(board)
 
-  board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-  index = 0
+index = 0
 
     puts "Please enter 1-9:"
     user_input = gets.strip
@@ -13,7 +13,7 @@ def turn(board)
 
     while valid_move?(board,index) == false
 
-      puts "invalid."
+      puts "invalid"
 
       user_input = gets.strip
 
