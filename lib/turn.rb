@@ -9,22 +9,21 @@ def turn(board)
 
     user_input = gets.strip
 
-    input_to_index(user_input)
-
     index = input_to_index(user_input)
 
-      while valid_move?(board, index) == false do
+      if valid_move?(board, index)
 
-      puts "invalid entry"
+        move(board, index, value = "X")
 
-      turn(board)
+        display_board(board)
 
-    end
+      else
 
-    move(board, index, value = "X")
+        puts "invalid move."
 
-    display_board(board)
+        turn(board)
 
+      end
   end
 
 def display_board(board)
