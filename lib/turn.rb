@@ -6,15 +6,16 @@ board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 def turn(board)
 
     puts "Please enter 1-9:"
+
     user_input = gets.strip
 
     input_to_index(user_input)
 
-    index = user_input.to_i - 1
+    index = input_to_index(user_input)
 
-    while valid_move?(board,index) == false
+      while valid_move?(board, index) == false do
 
-      puts "invalid"
+      puts "invalid entry"
 
       turn(board)
 
@@ -23,7 +24,6 @@ def turn(board)
     move(board, index, value = "X")
 
     display_board(board)
-
 
   end
 
