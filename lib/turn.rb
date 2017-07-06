@@ -39,9 +39,10 @@ index = integer - 1
 input_to_index(input)
 if valid_move?(board, index)
   move(board, index, character="X")
-else counter = 0
-  until counter == index.between?(1,9)
+else until index.between?(1,9) do
   puts "Please reenter 1-9:"
+  input = gets.strip
+  break
   end
 end
 puts display_board(board)
