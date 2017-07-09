@@ -1,1 +1,14 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+
+# start with empty board
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+# welcome user
+puts "Welcome to Tic Tac Toe!"
+
+# show starting board
+display_board(board)
+
+# ask for player move
+turn(board)
