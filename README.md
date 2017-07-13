@@ -42,7 +42,6 @@ end
 Before defining `#turn`, you should define the following methods:
 
 #### `#display_board`
-
 Should accept a board as an argument and print out the current state of the board for the user.
 
 #### `#valid_move?`
@@ -405,4 +404,3 @@ Another issue, besides only marking Xs as described above, is that the game play
 Even with these deficiencies, this `#turn` method means you are very close to building a complete Tic Tac Toe game. Get excited!
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ttt-8-turn' title='Building a Tic Tac Toe Turn'>Building a Tic Tac Toe Turn</a> on Learn.co and start learning to code for free.</p>
-
