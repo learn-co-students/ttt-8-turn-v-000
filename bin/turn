@@ -1,1 +1,17 @@
 #!/usr/bin/env ruby
+
+# The Purpose of this file is to execute a turn of Tic-Tac-Toe
+
+require_relative '../lib/turn'  # This is a path to a library of methods that this file will need to help it execute a turn
+
+board = [" "," "," "," "," "," "," "," "," "]  # This is an array to keep track of the state of the board
+
+puts "Welcome To Tic-Tac-Toe!"
+
+display_board(board)  #calls the display_board method with the local board variable as its argument
+
+count = 0
+while count < 9 do
+  turn(board)  #kicking off a turn of Tic-Tac-Toe
+  count += 1
+end
