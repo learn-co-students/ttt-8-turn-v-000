@@ -43,11 +43,10 @@ def turn(board)
   index = input_to_index(user_input)
   until valid_move?(board, index) == true
     puts "Please enter a valid move."
-    puts "Pleas enter 1-9:"
+    puts "Please enter 1-9:"
       user_input = gets.strip
-    input_to_index(user_input)
+    index = input_to_index(user_input)
   end
 move(board, index, character = "X")
 display_board(board)
-
 end
