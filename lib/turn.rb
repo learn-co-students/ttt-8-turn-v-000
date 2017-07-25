@@ -44,10 +44,12 @@ def turn(board)
 
   index = input_to_index(user_input)
 
-  until valid_move?(board, index) == true
+  if valid_move?(board, index) == true
+    move(board, index, character = "X")
+    display_board(board)
+  else
     turn(board)
   end
 
-  move(board, index, character = "X")
-  display_board(board)
+
 end
