@@ -53,6 +53,7 @@ index = input_to_index(user_input)
   if valid_move?(board, index) == true
     display_board(board)
     update_array_at_with(board, index, value="X")
+    display_board(board)
   else turn(board)
   end
 end
