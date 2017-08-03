@@ -1,1 +1,8 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn.rb'
+welcome_intro
+player = "X"
+board = [" "," "," "," "," "," "," "," "," "]
+#play game
+turn(board)
+display_board(board)
