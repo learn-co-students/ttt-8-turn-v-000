@@ -52,19 +52,21 @@ end
    # end
 
 
-def turn(board)
-  puts "Please enter 1-9:"
-  input=gets.strip
-  index=input_to_index(input)
+   def turn(board)
+     puts "Please enter 1-9:"
+     input=gets.strip
+     index=input_to_index(input)
+     while (!index.between?(1,9))
+       puts "Please enter 1-9:"
+       input=gets.strip
+       index=input_to_index(input)
+     end
 
-  while (!index.between?(1,9))
-    puts "Please enter 1-9:"
-    input=gets.strip
-    index=input_to_index(input)
-  end
+        position_taken?(board,index)
+        valid_move?(board,index)
+        move(board,index)
+        display_board(board)
 
-     position_taken?(board,index)
-     valid_move?(board,index)
-     move(board,index)
-     display_board(board)
-  end
+
+   end
+  
