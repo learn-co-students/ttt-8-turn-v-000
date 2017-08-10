@@ -51,19 +51,18 @@ end
    #   ask for input again until you get a valid input
    # end
 
-   
+
    def turn(board)
      puts "Please enter 1-9:"
      input=gets.strip
      index=input_to_index(input)
-     while (!index.between?(0,8))
+     while (!valid_move?(board,index))
        puts "Please enter 1-9:"
        input=gets.strip
        index=input_to_index(input)
      end
 
-        position_taken?(board,index)
-        valid_move?(board,index)
+
         move(board,index)
         display_board(board)
 
