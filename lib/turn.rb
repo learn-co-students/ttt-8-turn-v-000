@@ -35,36 +35,19 @@ def move(array, index, value)
 end
 
 def turn(board)
-  game_not_over = true
-  turn_count = 0
-  value = "X"
+  value = "X" #needs fixing
 
-#  while game_not_over
-    puts "Please enter 1-9:"
-    user_input = gets.strip
-    index = input_to_index(user_input)
+  puts "Please enter 1-9:"
+  user_input = gets.strip
+  index = input_to_index(user_input)
 
-    if valid_move?(board, index)
-      move(board, index, value)
+  if valid_move?(board, index)
+    move(board, index, value)
 
-      turn_count += 1
+    display_board(board)
 
-      display_board(board)
-
-      # check win condition
-      if turn_count == 9
-        game_not_over = false
-      end
-
-      if value == "X"
-        value = "O"
-      else
-        value = "X"
-      end
-
-    else
-      puts "invalid"
-      turn(board)
-    end
-#  end
+  else
+    puts "invalid"
+    turn(board)
+  end
 end
