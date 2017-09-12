@@ -55,13 +55,15 @@ def turn(board)
     input=gets
     index = input_to_index(input)
     if valid_move?(board, index)
-      true
+      move(board, index, value = "X")
+      display_board(board)
     else
-    turn(board)
-    x=turn(board)
+       turn(board)
 
     end
 end
+
+
 
 
 
