@@ -1,3 +1,7 @@
+
+
+
+
 def display_board(board)
   horizontal_lines = "-----------"
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -27,4 +31,11 @@ end
 def move(board, position, char = "X")
   #place character at index 0 of board array
   board[position] = char
+end
+
+def turn()
+puts "Please enter 1-9:"
+user_input = gets.strip
+input_to_index(user_input)
+valid_move?(board, index)
 end
