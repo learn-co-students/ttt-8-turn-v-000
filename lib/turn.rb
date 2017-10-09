@@ -1,3 +1,4 @@
+
 def display_board(board)
   horizontal_lines = "-----------"
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -20,8 +21,8 @@ def position_taken?(board, index)
 end
 
 def input_to_index(user_input)
-  new_user_input = user_input.to_i
-  new_user_input - 1
+  (user_input.to_i) - 1
+
 end
 
 def move(board, position, char = "X")
@@ -30,9 +31,14 @@ def move(board, position, char = "X")
 end
 
 def turn(board)
-puts "Please enter 1-9:"
-user_input = gets.strip.to_i
-new_user_input = user_input - 1
-input_to_index(new_user_input)
-valid_move?(board, new_user_input)
+  puts "Please enter 1-9:"
+  user_input = gets.strip
+  intended_move = input_to_index(user_input)
+    while valid_move?(board, intended_move)
+    move(board,intended_move, char = "X")
+    display_board(board)
+    else
+      puts "invalid"
+      turn(board)
+end
 end
