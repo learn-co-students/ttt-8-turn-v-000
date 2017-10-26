@@ -1,4 +1,4 @@
-def turn
+def turn (board)
   puts "Please enter 1-9:"
   input_to_index
   if
@@ -6,7 +6,7 @@ def turn
     move(board, move, char = "X")
   else
     until move(board, move, char = "X") == valid_move?(board, index)
-      turn
+      turn(board)
   end
  end
 end
@@ -42,6 +42,7 @@ def move(board, move, char = "X")
   board[move] = char
 end
 
+#input_to_index
 def input_to_index(number)
   number.to_i - 1
 
