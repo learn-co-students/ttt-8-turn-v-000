@@ -1,4 +1,4 @@
-def turn(board)
+def turn
   puts "Please enter 1-9:"
   input_to_index
   if
@@ -6,7 +6,7 @@ def turn(board)
     move(board, move, char = "X")
   else
     until move(board, move, char = "X") == valid_move?(board, index)
-      turn(board)
+      turn
   end
  end
 end
@@ -45,4 +45,16 @@ end
 def input_to_index(number)
   number.to_i - 1
 
+end
+
+#position taken
+def position_taken?(board, index)
+  index.to_i - 1
+  if board[index] == "X"
+    true
+  elsif board[index] == "O"
+    true
+  elsif board[index] == " " or ""
+    false
+  end
 end
