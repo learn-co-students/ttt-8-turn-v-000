@@ -1,9 +1,7 @@
 # index = false
 # until index == true
  def turn(board)
-  puts "Where would you like to go?"
-  puts "Please enter 1-9"
-  puts "1 for the upper left of the board and 9 for the lower right"
+  puts "Please enter 1-9:"
   input = gets.strip
  end
  def input_to_index(index)
