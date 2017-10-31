@@ -28,25 +28,18 @@ def valid_move?(board,index)
   index.between?(0,8) && !position_taken?(board,index)
 end
 
-def move(board, index, char = "O")
-  board[0] = "O"
-  board[8] = "X"
+def move(board, index, char)
+  board[index] = char
+  display_board(board)
 end
 
 def turn(board)
   puts "Please enter 1-9:"
-  i = gets.strip
-  index = input_to_index(i)
-  m = valid_move?(board, index)
-  if m == true
-    move(board, index,char = "0")
-  else
-    until m == true
-      puts "Sorry, that was an invalid move. Please enter 1-9:"
-      i
-      index
-      m
-    end
-  end
-  display_board(board)
+   index = input_to_index(gets.strip)
+   if valid_move?(board, index)
+   move(board, index, char = "X")
+ else
+     puts "Sorry, that is an invalid move."
+     turn(board)
+end
 end
