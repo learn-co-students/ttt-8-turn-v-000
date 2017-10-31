@@ -1,15 +1,16 @@
 
 def turn(board)
-  until index == true
-    print "Please enter a 1-9:"
+
+    puts "Please enter 1-9:"
     #ask_for_input(board,index)
     input = gets.strip
-    index = input_to_index(index)
-    position_taken?(board,index)
-    valid_move?(board,index)
-  end
-  move(board,index,value = "X")
-  display_board(board)
+    index = input_to_index(input)
+    if valid_move?(board,index)
+      move(board,index,value = "X")
+      display_board(board)
+    else
+      turn(board)
+    end
 end
 #def ask_for_input(board,index)
   #  print "Please enter a 1-9:"
@@ -21,15 +22,14 @@ def position_taken?(board,index)
     board[index] != " " && board[index] != "" && board[index] != nil
 end
 def valid_move?(board,index)
-  if position_taken?(board,index)
-    false
-  elsif index >= 0 && index < 10
+  if !position_taken?(board,index) && index.between?(0,8) # true
     true
-  else false
+  else
+    false
   end
 end
 def move(board,index,value = "X")
-  board [index] = value
+  board[index] = value
 end
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
