@@ -1,1 +1,9 @@
 #!/usr/bin/env ruby
+
+# Code your CLI Here
+require_relative '../lib/turn.rb'
+
+# Code your CLI Here
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+turn(board)
