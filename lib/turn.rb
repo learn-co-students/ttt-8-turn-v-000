@@ -35,19 +35,3 @@ def turn(board)
     turn(board)
   end
 end
-
-
-
-
-
-
-
-
-
-#LEARNED: variables actually execute; methods don't. values are stored in variables
-
-# if index is valid
-# make the move for index
-# show the board
-# else
-# ask for input again until you get a valid input
