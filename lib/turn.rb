@@ -28,9 +28,8 @@ def move(array, input, char = "X")
 end
 
 def turn(board)
-counter = 0 
-  until counter = 9
     puts "Please enter 1-9:"
-    counter += 1 
-  end
+    input = gets.strip
+    index = input_to_index(input)
+    move(board, index)
 end
