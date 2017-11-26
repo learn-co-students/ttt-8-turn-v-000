@@ -1,10 +1,10 @@
-def display_board
-  board = ["   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ",]
-  puts "#{board[0]}|#{board[1]}|#{board[2]}"
+
+def display_board(board)
+  puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
-  puts "#{board[3]}|#{board[4]}|#{board[5]}"
+  puts " #{board[3]} | #{board[4]} | #{board[5]} "
   puts "-----------"
-  puts "#{board[6]}|#{board[7]}|#{board[8]}"
+  puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end  
 
 def valid_move?(board, index)
@@ -19,3 +19,18 @@ def position_taken?(board, index)
   end
 end 
 
+def input_to_index(input)
+  input.to_i - 1 
+end
+
+def move(array, input, char = "X")
+  array[input] = char
+end
+
+def turn(board)
+counter = 0 
+  until counter = 9
+    puts "Please enter 1-9:"
+    counter += 1 
+  end
+end
