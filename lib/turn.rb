@@ -37,8 +37,10 @@ def turn(board)
   input_to_index(input)
   index = input.to_i
   index = index - 1
-  until valid_move?(board, index)
-    puts "Invalid. Please enter 1 - 9:"
-  end
 
+  if valid_move?(board, index)
+    move(board, index, token = "X")
+    display_board(board)
+  else turn(board)
+  end
 end
