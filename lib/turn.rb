@@ -34,11 +34,20 @@ def move(board, index, character = "X")
   board[index] = character
 end
 
-def turn(input, board, index)
+def turn(board)
   puts "Please enter 1-9:"
-  input_to_index(input)
-  while !valid_move(board, index)
+  index = input_to_index(gets.strip)
+    while !valid_move?(board, index)
     puts "Please enter a 1-9 for an open board position"
+    index = input_to_index(gets.strip)
   end
   move(board, index)
+  display_board(board)
 end
+
+
+#notes on turn:
+#it is necessary to incorporate the index = input_to_index twice. The first time, and then, if the move is invalid, again, for the second submittal.
+#We have to grab the input again in order to check it again!! it's a critical step in the while construct. almost critical like the incrementer is in a loop construct.
+
+#when we type input_to_index(gets.strip) we are 'abstracting' the user's "input" and using it as an argument for the input_to_index method. So important!!!

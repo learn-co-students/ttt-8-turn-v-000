@@ -7,4 +7,7 @@ puts "Welcome to Tic Tac Toe!"
 display_board(board)
 
 turn(board)
-display_board(board)
+
+#turn cannot be built with turn(index, board) because index is out of scope here. we have to call turn with board, then the method turn will declare index.
+#the above call to method #turn will only execute 1 turn
+#this code is incomplete. Items we need to add 1. Method to change characters 2. method to end game once three in a row are matched 3. method to change turns
