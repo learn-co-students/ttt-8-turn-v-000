@@ -36,14 +36,32 @@ end
 
 def turn(board)
   puts "Please enter 1-9:"
-  index = input_to_index(gets.strip)
-    while !valid_move?(board, index)
-    puts "Please enter a 1-9 for an open board position"
-    index = input_to_index(gets.strip)
+  input = gets.strip
+  index = input_to_index(input)
+  if valid_move?(board, index)
+    move(board, index)
+    display_board(board)
+  else
+    turn(board)
   end
-  move(board, index)
-  display_board(board)
 end
+
+#my original solution
+# def turn(board)
+#  puts "Please enter 1-9:"
+#  index = input_to_index(gets.strip)
+#    while !valid_move?(board, index)
+#    puts "Please enter a 1-9 for an open board position"
+#    index = input_to_index(gets.strip)
+#  end
+#  move(board, index)
+#  display_board(board)
+#end
+
+#the above is a bit redundant because while (the condition is met AKA the move
+#isn't valid) we could have called #turn again to start over (ask for position,
+# take input)
+
 
 
 #notes on turn:
@@ -51,3 +69,6 @@ end
 #We have to grab the input again in order to check it again!! it's a critical step in the while construct. almost critical like the incrementer is in a loop construct.
 
 #when we type input_to_index(gets.strip) we are 'abstracting' the user's "input" and using it as an argument for the input_to_index method. So important!!!
+#turn could also be written with
+# input = gets.strip
+#index = input_to_index(input)
