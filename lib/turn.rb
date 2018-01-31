@@ -11,3 +11,8 @@ def display_board(board = [" ", " ", " ", " ", " ", " ", " ", " ", " "])
    puts " O | X | O "
    
    end 
+   
+   def input_to_index(move)
+   index = move.to_i - 1
+   index
+end
