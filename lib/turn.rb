@@ -17,7 +17,8 @@ def input_to_index(move)
    end
    
 def valid_move(board, index)
+  if index(0,8) && !position_taken?(board, index)
+    puts ""
   
-end 
 
 
