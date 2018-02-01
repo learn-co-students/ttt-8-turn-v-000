@@ -34,13 +34,6 @@ end
     puts "Please enter 1-9:"
   user_input = gets.chomp 
   user_input = input_to_index(user_input)
- if valid_move?(board,index)
-   puts "this move is valid"
-   position_taken?(board,index)
-   move(board, index, token = "X") 
+ end 
  
- 
- end
-    
-  
  
