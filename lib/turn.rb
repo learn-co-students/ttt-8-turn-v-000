@@ -26,7 +26,8 @@ def position_taken?(board,index)
   raise "#{board[index]} is not a valid move"
 end
   
- def move(board, index, toke="X") 
+ def move(board, index, token = "X") 
+   board[index] = token
    
  end 
     
