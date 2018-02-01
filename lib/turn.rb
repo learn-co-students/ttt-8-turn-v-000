@@ -14,21 +14,21 @@ def display_board(board = [" ", " ", " ", " ", " ", " ", " ", " ", " "])
 def input_to_index(move)
    index = move.to_i - 1
    index
-   end
+  end
    
-def valid_move?(board,index)
-  
-  if index && !position_taken?(board,index)
-    puts "this move is valid"
-     return 
-    true
-  else
-     return 
-    false
-  end 
+def valid_move?(board, index)
+ index.between?(0,8) && !board
+    return
+    true 
+  else 
+    return 
+    false 
+  end
 end 
     
 
   
     
-
+ 
+    
+ 
