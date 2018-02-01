@@ -17,8 +17,10 @@ def input_to_index(move)
    end
    
 def valid_move?(board,index)
-  if valid_move?(board,index) && !position_taken?(board,index)
-    return 
+  
+  if index && !position_taken?(board,index)
+    puts "this move is valid"
+     return 
     true
   else
      return 
