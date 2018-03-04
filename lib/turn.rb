@@ -10,8 +10,6 @@ def turn(board)
     puts "Invalid entry. Please enter 1-9:"
     user_input = gets.strip
   end
-
-
 end
 
 def display_board(board)
