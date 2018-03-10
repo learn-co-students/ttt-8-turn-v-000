@@ -12,31 +12,55 @@ def input_to_index(input)#problem here
   user_input - 1
 end
 
-def move(board, index, input_to_index)
-board[index]=input_to_index
+def move(board, index, input)
+board[index]=input
 end
 
 def position_taken? (board, index)
     if board [index]=0&&board[index]==" "
       return true
-    elsif board[index]=="X"||board[index]=="O"
+    elsif board [index]=1&&board[index]==" "
+      return  true
+    elsif board [index]=2&&board[index]==" "
+      return  true
+    elsif board [index]=3&&board[index]==" "
+      return  true
+    elsif board [index]=4&&board[index]==" "
+      return  true
+    elsif board [index]=5&&board[index]==" "
+        return  true
+    elsif board [index]=6&&board[index]==" "
+        return  true
+    elsif board [index]=7&&board[index]==" "
+       return  true
+    elsif board [index]=8&&board[index]==" "
+        return  true
+    elsif board[index]=="X"&&board[index]=="O"
       return false
+
     elsif board[index]= -1
       return false
     end
   end
 
 def valid_move?(board,index)
-  if index.between?(0,8) && position_taken?(board, index)
-    return true
-  else return false
+
+if position_taken?(board, index)==true
+  return true
+elsif index= -1
+  return false
+
+else position_taken?(board, index)==false
+  return false
 end
+
 end
+
 
 def turn(board)
 
 puts "Please enter 1-9:"
 user_input=gets.strip
-input_to_index(user_input)
+input_to_index(input)
 
 end
