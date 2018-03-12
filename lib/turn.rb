@@ -1,4 +1,6 @@
 def display_board(board)
+
+
     puts " #{board[0]} | #{board[1]} | #{board[2]} "
     puts "-----------"
     puts " #{board[3]} | #{board[4]} | #{board[5]} "
@@ -9,49 +11,36 @@ end
 
 def input_to_index(input)#problem here
   user_input=input.to_i
-  user_input - 1
+  user_input=- 1
+  return user_input
 end
 
-def move(board, index, input)
-board[index]=input
+def move(board, index, input="X")
+
+board[index]=input_to_index(input)
 end
 
 def position_taken? (board, index)
-    if board [index]=0&&board[index]==" "
+board[index]=input_to_index(input)
+    if board[index]==" "
       return true
-    elsif board [index]=1&&board[index]==" "
-      return  true
-    elsif board [index]=2&&board[index]==" "
-      return  true
-    elsif board [index]=3&&board[index]==" "
-      return  true
-    elsif board [index]=4&&board[index]==" "
-      return  true
-    elsif board [index]=5&&board[index]==" "
-        return  true
-    elsif board [index]=6&&board[index]==" "
-        return  true
-    elsif board [index]=7&&board[index]==" "
-       return  true
-    elsif board [index]=8&&board[index]==" "
-        return  true
     elsif board[index]=="X"&&board[index]=="O"
       return false
-
-    elsif board[index]= -1
+    elsif board[index]<0||board[index]>8
       return false
+    elsif board[index]>=0&&board[inde]
     end
   end
 
 def valid_move?(board,index)
 
-if position_taken?(board, index)==true
+if position_taken?(board, index)=="X"||position_taken?(board,index)=="O"
+  return false
+elsif position_taken?(board, index)==true
   return true
-elsif index= -1
+elsif position_taken?(board, index)==false
   return false
 
-else position_taken?(board, index)==false
-  return false
 end
 
 end
@@ -60,7 +49,7 @@ end
 def turn(board)
 
 puts "Please enter 1-9:"
-user_input=gets.strip
+user_input=gets
 input_to_index(input)
 
 end
