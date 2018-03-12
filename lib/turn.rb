@@ -46,7 +46,7 @@ elsif index== -1
   end
 end
 
-def move(board, index, input)
+def move(board, index, input='X')
 
 if board[index]==" "
   board[index]=input
@@ -60,13 +60,17 @@ user_input=gets
 field=user_input
 user_input=input_to_index(user_input)
 if valid_move?(board, index=user_input)==true
-  board[index]=field
+  #board[index]=field
+  move(board, index, input=field)
 elsif valid_move?(board, index=user_input)==false
-  while valid_move?(board, index=user_input)==false
-    field=user_input
-    user_input=input_to_index(user_input)
-    if valid_move?(board, index=user_input)==true
-      board[index]=field
+    while valid_move?(board, index=user_input)==false
+      user_input=gets
+      field=user_input
+      user_input=input_to_index(user_input)
+      if valid_move?(board, index=user_input)==true
+        board[index]=field
+      end
     end
   end
+
 end
