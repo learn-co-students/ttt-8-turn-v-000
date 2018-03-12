@@ -37,7 +37,7 @@ def valid_move?(board,index)
   return true
   elsif board[index]=="O"
   return false
-  elsif index= -1
+elsif index== -1
   return false
   elsif position_taken?(board, index)==true
   return true
@@ -69,7 +69,4 @@ elsif valid_move?(board, index=user_input)==false
       board[index]=field
     end
   end
-end
-
-
 end
