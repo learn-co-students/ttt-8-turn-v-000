@@ -61,6 +61,15 @@ field=user_input
 user_input=input_to_index(user_input)
 if valid_move?(board, index=user_input)==true
   board[index]=field
+elsif valid_move?(board, index=user_input)==false
+  while valid_move?(board, index=user_input)==false
+    field=user_input
+    user_input=input_to_index(user_input)
+    if valid_move?(board, index=user_input)==true
+      board[index]=field
+    end
+  end
 end
+
 
 end
