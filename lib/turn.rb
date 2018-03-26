@@ -13,11 +13,8 @@ def input_to_index(user_input)
 end
 
 def valid_move?(board, index)
-  if position_taken?(board, index)==false && index.between?(0,8)
-    return true
-  else
-    return false
-  end
+ !position_taken?(board, index) && (0..8)===index
+
 end
 
 def position_taken?(board, index) #this is a helper method for the position_taken meth above
