@@ -59,7 +59,7 @@ describe './lib/turn.rb' do
       index = 4
       expect(valid_move?(board, index)).to be_falsey
 
-      index = -1
+      index = 100
       expect(valid_move?(board, index)).to be_falsey
     end
   end
