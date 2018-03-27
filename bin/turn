@@ -5,11 +5,4 @@ board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 puts "Welcome to Tic Tac Toe!"
 display_board(board)
 turn(board)
-input = gets.chomp
-input_to_index(input)
-if valid_move?(board, input)
-  move(board, input, players_character = "X")
-else
-  nil
-end
-turn(board)
+
