@@ -25,7 +25,14 @@ def input_to_index(move)
 end
 
 def move(board, index, value = "X")
+  #in here, when no 3rd argument is given, value is "O"
+  #board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+  #board[index] == " "  but we want to make it whatever value is so:
+
   board[index] = value
+  
+  #now, board will have a token somewhere and might look like this if value is "X" and index is 0:
+  #board = ["X", " ", " ", " ", " ", " ", " ", " ", " "]
 end
 
 def turn(board)
@@ -33,8 +40,11 @@ def turn(board)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index)
-    true
+     move(board, index)
+     display_board(board)
+     
   else
     turn(board)
 end
 end
+
