@@ -35,27 +35,32 @@ def position_taken? (board, index)
   end
 end
 
-def turn(board)
+def turn(board, turn = 1)
+  while turn < 10 
+
+  turn % 2 == 0 ? player = "X" : player = "O"
   
- # ask for input
- puts "Please enter 1-9:"
- 
-#get input
-input = gets
-
-# convert input to index
-index = input_to_index(input)
-
-# if index is valid
-if valid_move?(board, index)
-#   make the move for index
-  move(board, index)
-#   show the board
-  display_board(board)
-else
-#   ask for input again until you get a valid input
-  turn(board)
-end
+  # ask for input
+  puts "Please enter 1-9:"
+   
+  #get input
+  input = gets
   
-
+  # convert input to index
+  index = input_to_index(input)
+  
+  # if index is valid
+  if valid_move?(board, index)
+  #   make the move for index
+    move(board, index, player)
+  #   show the board
+    display_board(board)
+    turn += 1
+  else
+  #   ask for input again until you get a valid input
+    turn(board, turn)
+  end
+  
+  end
+  puts "thank you for playing"
 end 
