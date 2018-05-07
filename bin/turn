@@ -1,1 +1,33 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+
+# setup the board variable to store the array that will keep track of the state of the board
+
+board = [" "," "," "," "," "," "," "," "," "]
+
+# welcome the user and display a blank board
+
+puts "Welcome to Tic Tac Toe!"
+display_board(board)
+
+move(board, 4, "X")
+move(board, 0, "O")
+
+# ask user to make their move in space 1-9
+  puts "Please enter 1-9:"
+  
+# stores the selection into the user_input field
+user_input = gets.strip
+  
+# run the turn method to validate it is a valid number - loop until acceptable input is obtained  
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+
+
