@@ -57,15 +57,16 @@ def turn(board)
   #convert user_input to index
   position = input_to_index(user_input)
 
-    #make the move for input
-    if valid_move?(board, position)
-      move(board, position)
-      display_board(board)
+  #make the move for input
+  if valid_move?(board, position)
+    move(board, position)
+    display_board(board)
+    puts 'Great move!  Now sit tight while "O" makes their move.'
 
   else
     #ask for input again until you get a valid input
-      turn(board)
-        puts "Your move, #{user_input}, is invalid.  Try again."
+    puts "Your move, #{user_input}, is invalid.  Try again."
+    turn(board)
     
     end
 end
