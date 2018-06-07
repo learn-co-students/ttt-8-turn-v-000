@@ -38,11 +38,15 @@ def turn(board)
   if valid_move?(board, index) == true
     move(board, index, player)
   else
-    until valid_movie?(board, index) == true
+    valid_movie?(board, index)
       puts "Please enter 1-9:"
+    end
 end
 end
 
 def input_to_index(input)
 input.to_i - 1
 end
+
+input = gets.strip
+index = input_to_index(input)
