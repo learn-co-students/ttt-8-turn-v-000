@@ -19,6 +19,7 @@ def valid_move?(board, index)
 end
 
 def position_taken?(board, index)
+
      if board[index] == " "
        return false
      elsif board[index] == ""
@@ -30,18 +31,21 @@ def position_taken?(board, index)
     end
     end
 
-def move(array, index, player = "X")
-  array[index] = player
+def move(board, index, player = "X")
+  board[index] = player
 end
 
 def turn(board)
+puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
-    board[index] = player
   if valid_move?(board, index) == true
-    move(board, index, player)
+    move(board, index, "X")
+    display_board(board)
   else
-    valid_movie?(board, index)
+    input = gets.strip
+    index = input_to_index(input)
+    valid_move?(board, index)
       puts "Please enter 1-9:"
     end
 end
