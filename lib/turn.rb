@@ -35,6 +35,9 @@ def move(array, index, player = "X")
 end
 
 def turn(board)
+  input = gets.strip
+  index = input_to_index(input)
+    board[index] = player
   if valid_move?(board, index) == true
     move(board, index, player)
   else
@@ -46,6 +49,3 @@ end
 def input_to_index(input)
 input.to_i - 1
 end
-
-input = gets.strip
-index = input_to_index(input)
