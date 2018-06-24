@@ -7,9 +7,22 @@ def display_board(board)
 
 end 
 
-def  valid_move? (board, index)
-true
+def   valid_move? (board, index)
+  
+  if board[index] ==" " || board[index] =="" 
+  true
+
+  
+   elsif board[index] == "X" || board[index] == "O"
+   false 
+   
+   elsif index < 0
+   false
+
+   end
+
 end
+
 
 def input_to_index(user_input)
 user_input.to_i-1
@@ -21,21 +34,8 @@ def move(board, position, character="X")
 end
 
 
-=begin board = [" ", " ", " "," ", " "," "," ", " ", " "]
 
-puts "Welcome to Tic Tac Toe!"
 
-puts "Please enter 1-9:"
-
-input = gets.strip
-
-index =  input_to_index(input)
-
-move(board, index)
-
-display_board(board) =end
-
-  
 
 
   
