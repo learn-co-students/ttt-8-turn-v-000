@@ -33,11 +33,9 @@ puts "Please enter 1-9:"
 
   valid_move?(board, index)
   index.between?(0, 8) && board[index] ==" " || board[index] ==""
-
-  
   until index.between?(0, 8)
 end
-puts "Please enter 1-9:"
+      puts "Please enter 1-9:"
 end
 
 
