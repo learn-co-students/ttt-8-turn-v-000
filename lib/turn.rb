@@ -28,10 +28,16 @@ puts "Please enter 1-9:"
   input = gets.strip
   index =  input_to_index(input)
   move(board, index)
+  
   display_board(board)
 
   valid_move?(board, index)
   index.between?(0, 8) && board[index] ==" " || board[index] ==""
+
+  
+  until index.between?(0, 8)
+  puts "Please enter 1-9:"
+end
 
 end
 
