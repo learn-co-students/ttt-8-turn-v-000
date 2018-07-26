@@ -1,1 +1,12 @@
 #!/usr/bin/env ruby
+
+require_relative '../lib/turn.rb'
+
+welcome
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+display_board(board)
+your_move
+input = gets.strip
+index = input_to_index(input)
+move(board, index, value = "X")
+turn(board)
