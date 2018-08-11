@@ -21,29 +21,6 @@ def valid_move?(board, index)
     end
   end
   
-  # describe '#valid_move?' do
-  #   it 'returns true/false based on index' do
-  #     board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
-
-  #     index = 0
-  #     expect(valid_move?(board, index)).to be_truthy
-
-  #     index = 4
-  #     expect(valid_move?(board, index)).to be_falsey
-
-  #     index = -1
-  #     expect(valid_move?(board, index)).to be_falsey
-  #   end
-  # end
-
-
-
-
-
-
-
-
-
 # Hint: While not explicitly required by this lab, you might want to encapsulate the logic to check if a position is occupied in its own method, perhaps #position_taken?
 def position_taken?(board, index)
     if board[index] == " " || board[index] == "" || board[index] = nil
@@ -78,10 +55,6 @@ def turn(board)
       true; move(board, indexNum)
     else
       false; turn(board)
-        #   make the move for index
-        #   show the board
-        # else
-        #   ask for input again until you get a valid input
-        # end
+      
 end
 end
