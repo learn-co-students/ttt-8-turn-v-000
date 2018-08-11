@@ -14,20 +14,46 @@ def display_board(board)
 # #valid_move?
 # Should accept a board and an index from the user and return true if the index is within the correct range of 0-8 and is currently unoccupied by an X or O token.
 def valid_move?(board, index)
-    position_taken?(board, index)
-    if board[index] == "X" || board[index] == "O"; false
-    elsif index > 9; false
+    if position_taken?(board, index) == true; false
+    #elsif board[index] == "X" || board[index] == "O"; true
+    elsif index > 9 || index < 0; false
     else; true
     end
   end
   
+  # describe '#valid_move?' do
+  #   it 'returns true/false based on index' do
+  #     board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
+
+  #     index = 0
+  #     expect(valid_move?(board, index)).to be_truthy
+
+  #     index = 4
+  #     expect(valid_move?(board, index)).to be_falsey
+
+  #     index = -1
+  #     expect(valid_move?(board, index)).to be_falsey
+  #   end
+  # end
+
+
+
+
+
+
+
+
 
 # Hint: While not explicitly required by this lab, you might want to encapsulate the logic to check if a position is occupied in its own method, perhaps #position_taken?
 def position_taken?(board, index)
-    board[index] == " " || board[index] == ""
-    board[index] == "X" || board[index] == "O"
+    if board[index] == " " || board[index] == "" || board[index] = nil
+      false
+    else
+      true
+    #board[index] == "X" || board[index] == "O"
+  
   end
-
+end
 # #move
 # This method should accept a board, an index from the user (which was converted from their raw input with input_to_index), and a token to mark that position with (you can give that argument a default value of 'X'––we're not worrying about whose turn it is yet). The method should set the correct index value of that position within the board equal to the token.
 def move(board, userinput, character = "X")
@@ -46,16 +72,16 @@ def turn(board)
         # get input
     index = gets.strip
         # convert input to index
-    index = input_to_index(index)
+    indexNum = input_to_index(index)
         # if index is valid
-    if valid_move?(board, index) == true
-        true
-        #   make the move for index
-        #   show the board 
-        move(board, index); display_board(board)
+    if valid_move?(board, indexNum) == true
+      true; move(board, indexNum)
     else
-        false
+      false; turn(board)
+        #   make the move for index
+        #   show the board
+        # else
         #   ask for input again until you get a valid input
-        turn(board)
-    end   
+        # end
+end
 end
