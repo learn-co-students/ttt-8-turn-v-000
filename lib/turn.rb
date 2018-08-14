@@ -8,18 +8,20 @@
 
 # code your input_to_index and move method here!
   def input_to_index (user_input)
-    new_user_input = user_input.to_i #takes the users input and converts it into an integer
-    new_user_input -=1 #the board has nine spots available but the array will start us at zero.
-    return new_user_input #How do we store the users input ?
+    index = user_input.to_i #takes the users input and converts it into an integer
+    index -=1 #the board has nine spots available but the array will start us at zero.
+    return index #How do we store the users input?
   end
 
 #checks to see if the position is already taken and if it's an actual number
-  def position_taken?(board, index)
-    if (board[index] == " ")|| (board[index]== "")|| (board[index] == nil)
-      return false
-    else
-      return true #board[index] is not " " or " "  because there's an "X" or "O"
-    end
+
+  def valid_move?(board, index)
+    def position_taken?(array, ind)
+      if array[ind] == " " || array[ind] == "" || array[ind] == nil
+        return false
+      else
+        return true
+      end
   end
 
   def on_board?(num)
@@ -32,8 +34,8 @@
 
   if (position_taken?(board, index)) == false && (on_board?(index) == true)
     return true
-  else
-    return false
+    else
+      return false
     end
   end
 
@@ -47,7 +49,7 @@
   def turn(board)
     puts "Please enter 1-9:"
     num = gets.strip
-    input = input_to_index(num)
+    index = input_to_index(num)
       if valid_move?(board, index) == true
         move(board, index)
         display_board(board)
