@@ -1,31 +1,20 @@
-
-#get input
-
-#convert input to index
-#if index is valid
- # make the move for index
-  #show the board
 #else
   #ask for input again until you get a valid input
 #end
 
-while valid_move? == true 
+#while valid_move? == true 
  def turn(board)
   puts "Please enter 1-9:" #asks for input
-end  
-  
-while valid_move? == true
-turn(board)
+ input = gets.strip
+ index = input_to_index(input)
+ if valid_move?(board, index) == true
+   move(board, index)
+   display_board(board)
+ else 
+  gets.strip
+ end
+ end
 
-#if valid_move? == true  #if index is valid
- # puts "Do"
-  #elsif #boad full
-  #puts "yolo"
-#elsif valid_move == false
- # puts "Please enter 1-9 for an open space"
-end
-#end
-#end
 
 
 def display_board(board)
