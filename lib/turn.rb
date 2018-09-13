@@ -13,10 +13,14 @@ def move (board, index, token = "X")
   board[index] = token
 end
 
-def valid_move?
-  if board[index] == "X"  || board[index] == "O"
-  false
-else
-  true
+def valid_move? (board, index)
+  if board[index] == "X" || board[index] ==  "O"
+    false
+  elsif board[index] == " " || board[index] == ""
+    true
   end
+end
+
+def turn (board)
+  puts "Please enter 1-9:"
 end
