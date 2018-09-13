@@ -14,9 +14,9 @@ def move (board, index, token = "X")
 end
 
 def valid_move?
-  if index [board] == "X"  || index [board] == "O"
+  if board[index] == "X"  || board[index] == "O"
   false
 else
   true
-end
+  end
 end
