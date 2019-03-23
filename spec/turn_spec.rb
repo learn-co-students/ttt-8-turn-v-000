@@ -127,7 +127,7 @@ describe './lib/turn.rb' do
     end
 
     it 'makes valid moves' do
-      board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+      board = ["X", " ", " ", " ", " ", " ", " ", " ", " "]
 
       allow($stdout).to receive(:puts)
 

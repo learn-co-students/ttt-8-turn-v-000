@@ -28,16 +28,18 @@ def input_to_index(input)
    puts "Please enter 1-9:" 
    i = gets.chomp.to_i
    
- puts ("   |   |   ")
- puts ("-----------")
- puts ("   | X |   ")
- puts ("-----------")
- puts ("   |   |   ")
+   board = ([" ", " ", " ", " ", " ", " ", " ", " ", "X"])
+   
+    puts ("   |   |   ")
+    puts ("-----------")
+    puts ("   | X |   ")
+    puts ("-----------")
+    puts ("   |   |   ")
    
  
  end
- 
- # puts input_to_index("X")
+  
+ # puts input_to_index("X") 
  
 
   
