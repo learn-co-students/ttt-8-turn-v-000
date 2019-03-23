@@ -28,10 +28,31 @@ def input_to_index(input)
    puts "Please enter 1-9:" 
    i = gets.chomp.to_i
    
- end 
+ puts ("   |   |   ")
+ puts ("-----------")
+ puts ("   | X |   ")
+ puts ("-----------")
+ puts ("   |   |   ")
+   
  
+ end
  
+ # puts input_to_index("X")
  
+
+  
+         
+       
+     
+  
+       
+       
+       
+  
+ 
+
+ 
+
  
  
  
