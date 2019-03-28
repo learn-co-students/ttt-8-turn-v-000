@@ -19,27 +19,37 @@ def position_taken?(board, index)
 def input_to_index(input)
     input.to_i  - 1
   end
+end 
+
   
  def move(board, index, player = "X")
  board[index] = player
  end 
  
  def turn(board)
+   display_board(board)
+   
    puts "Please enter 1-9:" 
-   i = gets.chomp.to_i
+   i = gets.strip
+   index = input_to_index(i)
    
-  # board = ([" ", " ", " ", " ", " ", " ", " ", " ", "X"])
-   
-    puts ("   |   |   ")
-    puts ("-----------")
-    puts ("   | X |   ")
-    puts ("-----------")
-    puts ("   |   |   ")
-   
- 
- end
+  if valid_move?(board, index)
+    move(board, index)
+    display_board(board)
   
- # puts input_to_index("X") 
+  end
+    
+ 
+  
+  
+
+    
+  
+  
+   
+
+  
+
  
 
   
