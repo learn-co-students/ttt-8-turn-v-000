@@ -168,7 +168,8 @@ get input
 convert input to index
 if index is valid
   make the move for input
-else
+else0
+
   ask for input again until you get a valid input
 end
 ```
@@ -405,4 +406,3 @@ Another issue, besides only marking Xs as described above, is that the game play
 Even with these deficiencies, this `#turn` method means you are very close to building a complete Tic Tac Toe game. Get excited!
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/ttt-8-turn' title='Building a Tic Tac Toe Turn'>Building a Tic Tac Toe Turn</a> on Learn.co and start learning to code for free.</p>
-
