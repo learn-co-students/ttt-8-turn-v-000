@@ -1,1 +1,13 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+
+board = Array.new
+for i in 0..8
+  board[i] = " "
+end
+
+puts "Welcome to Tic Tac Toe!"
+
+display_board(board)
+
+turn(board)
