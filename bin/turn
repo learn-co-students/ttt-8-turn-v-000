@@ -1,1 +1,23 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn.rb'
+
+board = Array.new(9, " ")
+
+puts "Welcome to Tic Tac Toe!"
+
+display_board(board)
+
+def input_to_index(input)
+  index = "#{input}".to_i - 1
+  return index
+end
+
+def get_user
+  input = gets.strip
+  index = input_to_index(input)
+end
+
+turn(board)
+
+index = 1
+index = 5
