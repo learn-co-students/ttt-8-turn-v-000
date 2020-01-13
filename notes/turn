@@ -1,0 +1,26 @@
+##################################
+
+to run the program run the following:
+ ./bin/turn
+
+##################################
+
+#!/usr/bin/env ruby
+
+require_relative '../lib/turn' //require the code that we written up in /lib/turn
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "] // declare an empty board
+
+puts "Welcome to Tic Tac Toe!" // print a welcome to our user
+
+display_board(board)
+
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
