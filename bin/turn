@@ -1,1 +1,14 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts "Welcome to Tic Tac Toe!"
+display_board(board)
+turn(board)
+turn_counter = 0
+
+while turn_counter < 9
+  turn(board)
+  turn_counter += 1
+end
