@@ -1,1 +1,18 @@
 #!/usr/bin/env ruby
+
+require_relative '../lib/turn'
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts "Welcome to Tic Tac Toe!"
+
+#If you want to see what it looks like if some turns have already occured, uncomment the commented lines below.
+#move(board, 4, "X")
+#move(board, 0, "O")
+#move(board, 1, "X")
+
+display_board(board)
+
+turn(board)
+
+#If you want to continue with more turns, just keep adding turn(board) to this file (although I am sure there is a more elegant way).
