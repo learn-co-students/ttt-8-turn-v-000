@@ -1,1 +1,9 @@
 #!/usr/bin/env ruby
+
+require_relative '../lib/turn'
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+# Creates new board equal to a new array with 9 elements
+puts "Welcome to Tic Tac Toe!"
+display_board(board)
+turn(board)
