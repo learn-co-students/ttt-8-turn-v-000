@@ -1,1 +1,22 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+
+board = [" "," "," "," "," "," "," "," "," "]
+
+puts "Welcome to Tic Tac Toe!"
+display_board(board)
+#puts "Please enter 1-9: "
+#input = gets.strip
+#index = input_to_index(input)
+turn(board)
+
+
+#turn(board)
+
+#display_board(board)
+
+#if valid_move == false
+  #puts "Move invalid. Please enter a different number between 1-9"
+#else move
+#end
+#display_board(board)
