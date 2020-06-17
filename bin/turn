@@ -1,1 +1,11 @@
 #!/usr/bin/env ruby
+
+#Load our library of methods defined in lib/turn.rb
+require_relative '../lib/turn'
+#Next, the CLI needs to setup the data required to play a game of Tic Tac Toe, namely, the board variable to store the array we use to keep track of the state of the board.
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+#Welcome the user
+puts "Welcome to Tic Tac Toe!"
+#display the board for
+display_board(board)
+turn(board)
