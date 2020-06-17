@@ -1,1 +1,8 @@
 #!/usr/bin/env ruby
+
+require_relative "../lib/turn"
+
+#define_board
+#display_board
+#"Welkome Player!"
+#Play
