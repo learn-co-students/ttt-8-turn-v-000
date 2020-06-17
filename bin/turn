@@ -1,1 +1,14 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+
+
+board = [" "," "," "," "," "," "," "," "," "]
+
+puts "Welcome to Tick Tac Toe!"
+
+display_board(board)
+turn(board)
+
+input = gets.strip
+
+index = input_to_index(input)
