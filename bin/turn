@@ -1,1 +1,11 @@
 #!/usr/bin/env ruby
+require_relative '../ttt_library.rb'
+require_relative '../lib/turn.rb'
+
+#this creates the "intro" screen and asks user for a move
+board = [" "," "," "," "," "," "," "," "," "]
+puts "Welcome to Tic Tac Toe!"
+display_board(board, 'Display')
+
+
+turn(board)
