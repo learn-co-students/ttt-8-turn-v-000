@@ -1,1 +1,10 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn.rb'
+board = [" "," "," "," "," "," "," "," "," "]
+turn(board)
+index = input_to_index(index)
+position_taken?(board,index)
+valid_move?(board,index)
+#ask_for_input(board,index)
+move(board,index,value = "X")
+display_board(board)
