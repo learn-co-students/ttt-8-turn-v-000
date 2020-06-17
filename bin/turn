@@ -1,1 +1,5 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn.rb'
+puts "Hello, let's play a game. Tic-tac-toe, perhaps?"
+board = [" "," "," "," "," "," "," "," "," "]
+turn(board)
