@@ -1,1 +1,15 @@
 #!/usr/bin/env ruby
+
+# REQUIRE #turn.rb FILE
+require_relative '../lib/turn.rb'
+# SET AN EMPTY BOARD AT START
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+# OUTPUT A GREETING
+puts "Welcome to Tic Tac Toe!"
+
+# DISPLAY THE EMPTY BOARD
+display_board(board)
+
+# BEGIN TURN METHOD
+turn(board)
