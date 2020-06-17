@@ -28,31 +28,21 @@ end
 end
 # code your input_to_index and move method here!
 def input_to_index(user_input)
-  user_input.to_i - 1
+  user_input = user_input.to_i
+  user_input - 1
 end
-#def input_to_index(user_input)
-#  user_input = user_input.to_i
-#  user_input - 1
-#end
 #create move method
-def move(board, index, char = "X")
-  board[index.to_i] = char
+def move(board, position, char = "X")
+  board[position.to_i] = char
 end
-#def move(board, position, char = "X")
-#  board[position.to_i] = char
-#end
 
 # create tic tac toe turn here
 def turn(board)
   puts "Please enter 1-9:"
-  user_input = gets.strip
-index = input_to_index(user_input)
-if valid_move?(board, index) == false
-  #puts "Please enter 1-9:"
-  #use recursion instead
-  turn(board) #recursive
-else
-  move(board, index, char = "X")
-  display_board(board)
-end
+  index = gets.strip
+  index = input_to_index(index)
+#---------------
+#while valid_move?(board, index) == true
+puts "Please enter 1-9:"
+display_board(board)
 end
