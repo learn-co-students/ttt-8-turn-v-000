@@ -1,4 +1,4 @@
-# Building a Tic Tac Toe Turn
+leRl# Building a Tic Tac Toe Turn
 
 ## Objectives
 
@@ -43,7 +43,7 @@ Before defining `#turn`, you should define the following methods:
 
 #### `#display_board`
 
-Should accept a board as an argument and print out the current state of the board for the user.
+Should accept a board as an argument and print out the current state of the board fo              r the user.
 
 #### `#valid_move?`
 
