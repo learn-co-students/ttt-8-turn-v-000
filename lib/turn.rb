@@ -12,7 +12,6 @@ def input_to_index(user_input)
 end
 
 def valid_move?(board, index)
-    #binding.pry
     if board[index] == "X" || board[index] == "O" || index < 0 || index > 8
         return false
     end
